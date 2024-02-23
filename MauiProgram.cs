@@ -11,8 +11,10 @@ namespace _2Buy
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
                 {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("Inter-Regular.ttf", "InterRegular");
+                    fonts.AddFont("Inter-SemiBold.ttf", "InterSemibold");
+                    fonts.AddFont("Inter-Bold.ttf", "InterBold");
+                    fonts.AddFont("RemixIcon.ttf", "RemixIcon");
                 });
 
 #if DEBUG

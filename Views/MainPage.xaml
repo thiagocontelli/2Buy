@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:resources="clr-namespace:_2Buy.Resources"
+             x:Class="_2Buy.Views.MainPage">
+
+    <Shell.TitleView>
+        <Grid ColumnDefinitions="*, Auto" Padding="0, 0, 16, 0">
+            <Label Text="2Buy" VerticalOptions="Center" FontSize="Title" FontAttributes="Bold" />
+            <Grid Grid.Column="1" ColumnSpacing="16" ColumnDefinitions="Auto, Auto">
+                <ImageButton>
+                    <ImageButton.Source>
+                        <FontImageSource 
+                            Glyph="{Static resources:Icons.QuestionLine}" 
+                            FontFamily="RemixIcon" 
+                            Color="Black" 
+                            Size="24" />
+                    </ImageButton.Source>
+                </ImageButton>
+                <ImageButton Grid.Column="1">
+                    <ImageButton.Source>
+                        <FontImageSource 
+                            Glyph="{Static resources:Icons.StarLine}" 
+                            FontFamily="RemixIcon" 
+                            Color="Black" 
+                            Size="24" />
+                    </ImageButton.Source>
+                </ImageButton>
+            </Grid>
+        </Grid>
+    </Shell.TitleView>
+
+
+    <Grid RowDefinitions="*, Auto">
+        <Grid Padding="16, 16, 16, 0">
+            <CollectionView x:Name="collectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="0, 0, 0, 16">
+                            <Grid ColumnDefinitions="*, Auto">
+                                <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto, Auto" RowSpacing="8">
+                                    <CheckBox Grid.RowSpan="2" Margin="0, 0, 12, 0" />
+                                    <Label 
+                                        Grid.Column="1" 
+                                        Text="{Binding .}" 
+                                        FontSize="Subtitle" 
+                                        FontAttributes="Bold"
+                                        MaxLines="1"
+                                        LineBreakMode="TailTruncation"/>
+                                    <Label Grid.Column="1" Grid.Row="1" Text="2/5 un." />
+                                </Grid>
+                                <Grid Grid.Column="1" ColumnSpacing="16" ColumnDefinitions="Auto, Auto">
+                                    <ImageButton>
+                                        <ImageButton.Source>
+                                            <FontImageSource
+                                                Glyph="{Static resources:Icons.SubtractFill}" 
+                                                FontFamily="RemixIcon" 
+                                                Color="{StaticResource Red300}"
+                                                Size="24" />
+                                        </ImageButton.Source>
+                                    </ImageButton>
+                                    <ImageButton Grid.Column="1">
+                                        <ImageButton.Source>
+                                            <FontImageSource 
+                                                Glyph="{Static resources:Icons.AddFill}" 
+                                                FontFamily="RemixIcon" 
+                                                Color="{StaticResource Green300}"
+                                                Size="24" />
+                                        </ImageButton.Source>
+                                    </ImageButton>
+                                </Grid>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+        <VerticalStackLayout Grid.Row="1">
+            <BoxView HeightRequest="1" BackgroundColor="{StaticResource Gray100}" />
+            <Button Text="ADICIONAR +" Margin="16" />
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
